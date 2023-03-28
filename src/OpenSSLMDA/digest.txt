@@ -1,0 +1,1 @@
+SHA1(plain.txt)= 3a30948f8cd5655fede389d73b5fecd91251df4a

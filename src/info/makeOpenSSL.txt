@@ -1,0 +1,4 @@
+1. Go to https://github.com/openssl/openssl to download it to local folder shared with ubuntu VM.
+2. In ubuntu VM, go to "/mnt/hgfs/shared/" to find the downloaded file.
+3. "cd" into the downloaded file, "./Configure"
+4. "make"

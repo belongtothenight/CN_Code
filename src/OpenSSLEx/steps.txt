@@ -1,0 +1,20 @@
+///////////////////////////
+SECTION 1
+=========
+Install OpenSSL
+///////////////////////////
+
+1. Use "openssl --version". If it returns a version number, then it is already installed.
+2. Use "sudo apt-get install openssl" to install OpenSSL.
+
+///////////////////////////
+SECTION 2
+=========
+OpenSSL Key Generation
+///////////////////////////
+
+1. Use "openssl genrsa -des3 -out privatekey.pem" to generate the private key. (type a set of characters as pass phrase for DES encryption)
+2. Use "openssl rsa -in privatekey.pem -pubout out publickey.pem" to generate public key.
+3. Use "echo "abcdefg" > plain.txt" to create a file for encryption.
+4. Use "openssl rsautl -encrypt -pubin -inkey publickey.pem -in plain.txt -out cipher.txt" to encrypt.
+5. Use "openssl rsautl -decrypt -inkey privatekey.pem -in cipher.txt -out plainRcv.txt".

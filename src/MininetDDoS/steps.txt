@@ -1,0 +1,63 @@
+///////////////////////////
+SECTION 1
+=========
+Install Mininet
+///////////////////////////
+
+0. Set up VM from lab518.
+1. Open "mininet.org/download/" to view instructions.
+2. In the section "Option 2: Native Installation from Source".
+
+///////////////////////////
+SECTION 2
+=========
+Create custom net environment
+///////////////////////////
+
+1. Use "cd /home/lab518/mininet/examples/"
+2. Use "sudo python miniedit.py" (this opens MiniEdit window).
+3. Use options on the left side in MiniEdit window to create your network.
+4. Click "Run" to check your network deployment status, and "Stop". Use "Run/Show OVS Summary" before stopping to check network details.
+5. Click "File/Export Level 2 Script" and store the network file in appropriate location.
+6. Use "sudo python <your l2ScriptName.py>" to launch your network.
+7. Open two of the host in your network and ping each other with "ping 10.x" to make sure they are connected.
+
+///////////////////////////
+SECTION 3
+=========
+Setup DDoS attack and monitor environment
+///////////////////////////
+
+1. Use "sudo apt-get install wireshark" to install wireshark.
+2. Use "cd /home/lab518/mininet" to go to mininet folder.
+3. Use "mkdir http" to create directory named "http".
+4. Use "gedit index.html" to create, edit, and save custom html page for display.
+5. Start custom network or "sudo mn" to launch default network.
+6. In "mininet" terminal, use "xterm h1 h2" to launch terminal of host1 and host2.
+7. In host1, use "sudo wireshark &" to launch wireshark.
+8. In host1, use "cd .. && cd http && python -m SimpleHTTPServer 80 &"
+9. In host2, use "sudo -i && test -f .Xauthority && mv .Xauthority .Xauthority.bak && cp -a /home/lab518/.Xauthority .Xauthority && chown root: .Xauthority && XAUTHORITY=/root/.Xauthority sudo firefox &" to launch firefox.
+10. In host2, in firefox tab, type "10.0.0.1" to acess html page hosted by host1.
+11. In host2, in terminal, type "ping 10.1" to continuous monitor host1 response time.
+
+///////////////////////////
+SECTION 4
+=========
+DDoS host1
+///////////////////////////
+
+1. Install custom DDoS tools.
+2. Use hosts other than host1 and host2 to attack host1. (both host1 and host2 need to stay executing, don't close them)
+3. In Wireshark opened with host1, open "Statistics/Conversations", "Statistics/End Points", "Statistics/Packet Lengths", "Statistics/IPv4 Statistics/All Addresses" to monitor DDoS effect.
+
+///////////////////////////
+SECTION 5
+=========
+DDoS Tools - hping3
+///////////////////////////
+
+1. Use "sudo apt-get install hping3" to install.
+2. Use commands like "sudo hping3 -0 -d 200 --flood 10.1" to attack host1.
+3. Go to "https://www.kali.org/tools/hping3/" to check for more details.
+4. If the attack is successful, the response time in host2 should increase significantly, refreshing firefox to load "10.0.0.1" should take more time to finish.
+
