@@ -91,6 +91,9 @@ SECTION 6
 Tools for experiments
 ///////////////////////////
 
+- https://askubuntu.com/questions/31618/how-can-i-find-my-hardware-details
+- https://unix.stackexchange.com/questions/394362/whats-the-shortcut-to-delete-a-word-forward-in-a-unix-terminal
+
 1. Generate large files: "fallocate -l 10G this_is_a_test_file.img"
 2. See file stats: "stat this_is_a_test_file.img", or "file this_is_a_test_file.img".
 3. Monitor server resource: Use webmin webpage "Dashboard" to monitor.
@@ -99,6 +102,18 @@ Tools for experiments
 6. Monitor Network directly: Use "sudo apt-get install iftop", "sudo iftop" to monitor.
 7. Multiple monitor: Use "sudo apt-get install terminator", "sudo terminator" to monitor.
 8. Monitor network traffic on server: Use "sudo apt-get install tshark", "sudo tshark -i eth0 -w something.pcap" to capture all traffic on etho0 to a pcap file. Which can be transfered and later analyse with wireshark.
+9. Check hardware info: 
+    Use "lspci" following with parameter ("-v", "-vv", "-nnk"). 
+        Use "lspci -nnk | grep VGA -A1" to find graphics. 
+        Use "lspci -v | grep -A7 -i "audio"" to find audio. 
+        Use "lspci -nnk | grep net -A2" to find networking.
+    Use "sudo lshw" to display comprehensive detail of hardware
+        Use "sudo lshw | less" to display less info.
+        Use "sudo lshw > hardwareInfo.txt" to export detail to file.
+    Use "lsusb" to display usb connection info.
+    Use "sudo apt-get install hardinfo" (most readable)
+        Use "sudo hardinfo" on desktop iso to display info in GUI, on server iso to display info with benchmarking result.
+        Use "sudo hardinfo > hardinfo.txt" to export full detail in txt. We can later open it up with "sudo nano hardinfo.txt".
 
 ///////////////////////////
 SECTION 7
