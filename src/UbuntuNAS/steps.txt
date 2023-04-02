@@ -118,7 +118,7 @@ Tools for experiments
 ///////////////////////////
 SECTION 7
 =========
-Test in VM
+VM Details
 ///////////////////////////
 
 1. NAS setup with Ubuntu 18.04 Desktop
@@ -132,3 +132,18 @@ Test in VM
 2.2 Password: 123456
 2.3 Webmin: https://192.168.161.133:10000
 2.4 Directory: \\192.168.161.133\share
+
+///////////////////////////
+SECTION 8
+=========
+DDoS Simulation
+///////////////////////////
+
+1. Launch two VMs.
+2. In windows, open cmd, ssh into both VMs at the same time.
+3. In windows cmd VM1, use "sudo iftop" to monitor network activity.
+4. In windows browser, open webmin dashboard page to monitor other activities at the same time.
+5. In windows cmd new tab, use "ping -t 192.168.xxx.xxx" to ping VM1 continuously.
+6. In windows cmd VM2, use multiple "sudo hping3 -1 -d 1000 --flood 192.168.xxx.xxx" to start DDoSing.
+7. In windows cmd new tab and webmin webpage, monitor how stats varies.
+8. In windows cmd VM2, use "sudo kill PID1 PID2 PID3 ..." to kill all DDoS processes.
