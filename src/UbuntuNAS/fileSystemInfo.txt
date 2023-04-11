@@ -1,0 +1,26 @@
+Disk /dev/fd0: 1.4 MiB, 1474560 bytes, 2880 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x90909090
+
+Device     Boot      Start        End    Sectors  Size Id Type
+/dev/fd0p1      2425393296 4850786591 2425393296  1.1T 90 unknown
+/dev/fd0p2      2425393296 4850786591 2425393296  1.1T 90 unknown
+/dev/fd0p3      2425393296 4850786591 2425393296  1.1T 90 unknown
+/dev/fd0p4      2425393296 4850786591 2425393296  1.1T 90 unknown
+
+
+Disk /dev/sda: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 3564E59D-5FB7-44C6-9B86-34D0A31CDA62
+
+Device     Start       End   Sectors  Size Type
+/dev/sda1   2048      4095      2048    1M BIOS boot
+/dev/sda2   4096 209713151 209709056  100G Linux filesystem
+
+
