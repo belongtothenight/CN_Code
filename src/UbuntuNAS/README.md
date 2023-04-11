@@ -102,57 +102,57 @@ If you want to share entire disk, you'll need to add, partition, format, mount, 
 - https://askubuntu.com/questions/73160/how-do-i-find-the-amount-of-free-space-on-my-hard-drive
 
 1. Generate large files: 
-    "fallocate -l 10G this_is_a_test_file.img"
+    - "fallocate -l 10G this_is_a_test_file.img"
 2. See file stats: 
-    "stat this_is_a_test_file.img", or "file this_is_a_test_file.img".
-3. Monitor server resource: 
-    Use webmin webpage "Dashboard" to monitor.
-4. Monitor CPU & Mem directly: 
-    Use "sudo apt-get install htop", "htop" to monitor.
-5. Monitor Disk Activity directly: 
-    Use "sudo apt-get install iotop", "sudo iotop" to monitor.
-6. Monitor Network directly: 
-    Use "sudo apt-get install iftop", "sudo iftop" to monitor.
-7. Multiple monitor: 
-    Use "sudo apt-get install terminator", "sudo terminator" to monitor.
-8. Monitor network traffic on server: 
-    Use "sudo apt-get install tshark", "sudo tshark -i eth0 -w something.pcap" to capture all traffic on etho0 to a pcap file. Which can be transfered and later analyse with wireshark.
-9. Check hardware info: 
+    - "stat this_is_a_test_file.img", or "file this_is_a_test_file.img".
+1. Monitor server resource: 
+    - Use webmin webpage "Dashboard" to monitor.
+1. Monitor CPU & Mem directly: 
+    - Use "sudo apt-get install htop", "htop" to monitor.
+2. Monitor Disk Activity directly: 
+    - Use "sudo apt-get install iotop", "sudo iotop" to monitor.
+3. Monitor Network directly: 
+    - Use "sudo apt-get install iftop", "sudo iftop" to monitor.
+4. Multiple monitor: 
+    - Use "sudo apt-get install terminator", "sudo terminator" to monitor.
+5. Monitor network traffic on server: 
+    - Use "sudo apt-get install tshark", "sudo tshark -i eth0 -w something.pcap" to capture all traffic on etho0 to a pcap file. Which can be transfered and later analyse with wireshark.
+6. Check hardware info: 
     1. PCI
-        Use "lspci" following with parameter ("-v", "-vv", "-nnk"). 
-        Use "lspci -nnk | grep VGA -A1" to find graphics. 
-        Use "lspci -v | grep -A7 -i "audio"" to find audio. 
-        Use "lspci -nnk | grep net -A2" to find networking.
+        - Use "lspci" following with parameter ("-v", "-vv", "-nnk"). 
+        - Use "lspci -nnk | grep VGA -A1" to find graphics. 
+        - Use "lspci -v | grep -A7 -i "audio"" to find audio. 
+        - Use "lspci -nnk | grep net -A2" to find networking.
     2. Hardware Comprehensive Detail
        1. method 1
-            Use "sudo lshw" to display comprehensive detail of hardware
-            Use "sudo lshw | less" to display less info.
-            Use "sudo lshw > hardwareInfo.txt" to export detail to file.
-            Use "sudo lshw -short" to display summary info.
-            Use "sudo lshw -html > x.html" to export info to html page.
+            - Use "sudo lshw" to display comprehensive detail of hardware
+            - Use "sudo lshw | less" to display less info.
+            - Use "sudo lshw > hardwareInfo.txt" to export detail to file.
+            - Use "sudo lshw -short" to display summary info.
+            - Use "sudo lshw -html > x.html" to export info to html page.
        2. method 2
-        Use "sudo apt-get install hardinfo" (most readable)
-        Use "sudo hardinfo" on desktop iso to display info in GUI, on server iso to display info with benchmarking result.
-        Use "sudo hardinfo > hardinfo.txt" to export full detail in txt. We can later open it up with "sudo nano hardinfo.txt".
+            - Use "sudo apt-get install hardinfo" (most readable)
+            - Use "sudo hardinfo" on desktop iso to display info in GUI, on server iso to display info with benchmarking result.
+            - Use "sudo hardinfo > hardinfo.txt" to export full detail in txt. We can later open it up with "sudo nano hardinfo.txt".
     3. USB Connection
-        Use "lsusb" to display usb connection info.
+        - Use "lsusb" to display usb connection info.
     4. CPU
-        Use "lscpu" to display CPU info.
+        - Use "lscpu" to display CPU info.
     5. Block Device (disk, partition, rom...)
-        Use "lsblk" to display block device info.
-        Use "lsblk -a" to display all devices.
+        - Use "lsblk" to display block device info.
+        - Use "lsblk -a" to display all devices.
     6. SCSI/SATA
-        Use "lsscsi" to display SCSI/SATA devices info.
+        - Use "lsscsi" to display SCSI/SATA devices info.
     7. File System
-        Use "sudo fdisk -l" to display file system information.
-10. Copy file with SSH connection
-    In windows, without SSH connected, use "scp user@192.168.xxx.xxx:*.txt ./" to copy all text file at current directory.
-11. Link/Mount directory
-    Use "sudo apt-get install sshfs" to install sshfs.
-    Use "sshfs user@192.168.xxx.xxx:/remote/dir /home/dir" to link/mount two directories.
-    Use "fusermount -u /home/dir" to unlink/unmount directories.
-12. Hard Drive Usage
-    Use "df -h"
+        - Use "sudo fdisk -l" to display file system information.
+7.  Copy file with SSH connection
+    - In windows, without SSH connected, use "scp user@192.168.xxx.xxx:*.txt ./" to copy all text file at current directory.
+8.  Link/Mount directory
+    - Use "sudo apt-get install sshfs" to install sshfs.
+    - Use "sshfs user@192.168.xxx.xxx:/remote/dir /home/dir" to link/mount two directories.
+    - Use "fusermount -u /home/dir" to unlink/unmount directories.
+9.  Hard Drive Usage
+    - Use "df -h"
 
 </details>
 
