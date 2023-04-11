@@ -124,12 +124,13 @@ If you want to share entire disk, you'll need to add, partition, format, mount, 
         Use "lspci -v | grep -A7 -i "audio"" to find audio. 
         Use "lspci -nnk | grep net -A2" to find networking.
     2. Hardware Comprehensive Detail
-        Use "sudo lshw" to display comprehensive detail of hardware
-        Use "sudo lshw | less" to display less info.
-        Use "sudo lshw > hardwareInfo.txt" to export detail to file.
-        Use "sudo lshw -short" to display summary info.
-        Use "sudo lshw -html > x.html" to export info to html page.
-        ---
+       1. method 1
+            Use "sudo lshw" to display comprehensive detail of hardware
+            Use "sudo lshw | less" to display less info.
+            Use "sudo lshw > hardwareInfo.txt" to export detail to file.
+            Use "sudo lshw -short" to display summary info.
+            Use "sudo lshw -html > x.html" to export info to html page.
+       2. method 2
         Use "sudo apt-get install hardinfo" (most readable)
         Use "sudo hardinfo" on desktop iso to display info in GUI, on server iso to display info with benchmarking result.
         Use "sudo hardinfo > hardinfo.txt" to export full detail in txt. We can later open it up with "sudo nano hardinfo.txt".
