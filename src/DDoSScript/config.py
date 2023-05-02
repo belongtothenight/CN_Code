@@ -1,5 +1,5 @@
 class Config():
-    def __init__(self) -> None:
+    def __init__(self):
         self.SYSTEM = 'w'
         # 'w' for Windows
         # 'l' for Linux

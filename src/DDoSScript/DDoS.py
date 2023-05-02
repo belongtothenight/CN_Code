@@ -6,7 +6,7 @@ from config import Config
 
 
 class DDOS():
-    def __init__(self, TARGETIPv4, ATKTOOL) -> None:
+    def __init__(self, TARGETIPv4, ATKTOOL):
         self.responseTime = []
         self.PIDs = []
         self.ATKcommands = []
