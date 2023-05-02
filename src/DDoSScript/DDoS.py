@@ -18,8 +18,10 @@ class DDOS():
         freq = '--flood'
         if self.ATKTOOL == 'hping3':
             for i, val in enumerate(mods):
+                # self.ATKcommands.append(
+                #     f'hping3 {val} -d {data} {freq} {self.TARGETIPv4} &')
                 self.ATKcommands.append(
-                    f'hping3 {val} -d {data} {freq} {self.TARGETIPv4} &')
+                    f'echo {val} &')
         # elif self.ATKTOOL == 'hulk':
         #     # not supported
         #     subprocess.run(['hulk', '-site', 'http://' + self.TARGETIPv4, '-port',
