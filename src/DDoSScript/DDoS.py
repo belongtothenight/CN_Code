@@ -13,7 +13,6 @@ class DDOS():
         self.ATKcommands = []
         self.TARGETIPv4 = TARGETIPv4
         self.ATKTOOL = ATKTOOL
-        atexit.register(self.killATKprocess)
 
     def spawnATKprocess(self, mods=[], **kwargs):
         data = 1000
@@ -31,6 +30,8 @@ class DDOS():
             # subprocess.run(val, shell=True)
             proc = subprocess.Popen(val, shell=True)
             self.PIDs.append(proc.pid)
+
+        atexit.register(self.killATKprocess)
 
     def killATKprocess(self, **kwargs):
         for i, val in enumerate(self.PIDs):
