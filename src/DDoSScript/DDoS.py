@@ -1,7 +1,6 @@
 import os
 import subprocess
 import multiprocessing
-import matplotlib.pyplot as plt
 from config import Config
 
 
