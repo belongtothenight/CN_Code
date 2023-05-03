@@ -4,8 +4,8 @@ class Config():
         self.ATKPARAMETERS = [
             ('  ', 1e9, '--flood', '', 0),
             ('-0', 1e9, '--flood', '', 0),
-            ('-1', 1e9, '--flood', '', 2),
-            ('-2', 1e9, '--flood', '', 2),
+            ('-1', 1e9, '--flood', '', 3),
+            ('-2', 1e9, '--flood', '', 3),
         ]
         '''
         (mode, data, freq, extra args, processes)
