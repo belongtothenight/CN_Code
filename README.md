@@ -11,4 +11,4 @@ Computer Network.
 | 3.  | [OpenSSLMDA](https://github.com/belongtothenight/CN_Code/tree/main/src/OpenSSLMDA)   | OpenSSL message digest / authentication.                      |
 | 4.  | [MininetDDoS](https://github.com/belongtothenight/CN_Code/tree/main/src/MininetDDoS) | DDoS attack within mininet.                                   |
 | 5.  | [UbuntuNAS](https://github.com/belongtothenight/CN_Code/tree/main/src/UbuntuNAS)     | Setup samba NAS on both ubuntu desktop & server.              |
-| 6.  | [DoSScript](https://github.com/belongtothenight/CN_Code/tree/main/src/DoSScript)     | Use program and scripts to DDoS and bring down a real server. |
+| 6.  | [DoSScript](https://github.com/belongtothenight/CN_Code/tree/main/src/DoSScript)     | Use program and scripts to DoS and bring down a real server. |
