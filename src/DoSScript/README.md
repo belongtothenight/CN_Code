@@ -1,4 +1,4 @@
-# DDoSScript
+# DoSScript
 
 This folder holds code for activating DDoS attacks with known tools like "hping3". <br>
 DO NOT USE THESE SCRIPTS FOR MALICIOUS PURPOSES. THESE ARE PREPARED ONLY FOR EDUCATIONAL PURPOSES.
