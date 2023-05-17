@@ -16,6 +16,7 @@ class Config:
         self.HULK = True
 
         self.waitTime = 5  # seconds
+        self.printColor = False
 
         self.HPING3_PARAMETERS = [
             ("  ", 1e9, "--flood", "", 0),
@@ -43,9 +44,12 @@ class Config:
             self.HPING3 = False
         if self.Platform == self.Platform2:
             # linux
-            print(
-                f'{Bcolors.WARNING} Make sure to be "sudo su" before executing this script. {Bcolors.ENDC}'
-            )
+            if self.printColor:
+                print(
+                    f'{Bcolors.WARNING} Make sure to be "sudo su" before executing this script. {Bcolors.ENDC}'
+                )
+            else:
+                print("Make sure to be 'sudo su' before executing this script.")
 
 
 class Bcolors:
