@@ -5,13 +5,15 @@ DO NOT USE THESE SCRIPTS FOR MALICIOUS PURPOSES. THESE ARE PREPARED ONLY FOR EDU
 
 ## Files
 
-| Filename  | Description                                                                                      |
-| --------- | ------------------------------------------------------------------------------------------------ |
-| main.py   | Intergrated DoS starter script.                                                                  |
-| config.py | Manages all of the settings.                                                                     |
-| hping3.py | Multiprocess attacker with hping3.                                                               |
-| hammer.py | Slim version of [hammering.py](https://github.com/depascaldc/DoS-Tool/blob/master/hammering.py). |
-| hulk.py   | Slim version of [HULK](https://github.com/R3DHULK/HULK).                                         |
+| Filename      | Description                                                                                      |
+| ------------- | ------------------------------------------------------------------------------------------------ |
+| main.py       | Intergrated DoS starter script for testing and debugging.                                        |
+| config.py     | Manages all of the settings.                                                                     |
+| hping3.py     | Multiprocess attacker with hping3.                                                               |
+| hammer.py     | Slim version of [hammering.py](https://github.com/depascaldc/DoS-Tool/blob/master/hammering.py). |
+| hulk.py       | Slim version of [HULK](https://github.com/R3DHULK/HULK).                                         |
+| integrated.py | Intergrate all of the above scripts into a single file.                                          |
+
 
 
 ## Experiment

