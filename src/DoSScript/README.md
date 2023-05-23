@@ -5,16 +5,29 @@ DO NOT USE THESE SCRIPTS FOR MALICIOUS PURPOSES. THESE ARE PREPARED ONLY FOR EDU
 
 ## Files
 
-| Filename      | Description                                                                                      |
-| ------------- | ------------------------------------------------------------------------------------------------ |
-| main.py       | Intergrated DoS starter script for testing and debugging.                                        |
-| config.py     | Manages all of the settings.                                                                     |
-| hping3.py     | Multiprocess attacker with hping3.                                                               |
-| hammer.py     | Slim version of [hammering.py](https://github.com/depascaldc/DoS-Tool/blob/master/hammering.py). |
-| hulk.py       | Slim version of [HULK](https://github.com/R3DHULK/HULK).                                         |
-| integrated.py | Intergrate all of the above scripts into a single file.                                          |
+| Filename      | Description                                                                                                                             |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| main.py       | Intergrated DoS starter script for testing and debugging.                                                                               |
+| config.py     | Manages all of the settings.                                                                                                            |
+| hping3.py     | <code style="color:Blue">/MULTI/</code> Multiprocess attacker with hping3.                                                              |
+| hammer.py     | <code style="color:Lime">/HTTP/</code> Slim version of [hammering.py](https://github.com/depascaldc/DoS-Tool/blob/master/hammering.py). |
+| hulk.py       | <code style="color:Lime">/HTTP/</code> Slim version of [HULK](https://github.com/R3DHULK/HULK).                                         |
+| integrated.py | Intergrate all of the above scripts into a single file.                                                                                 |
 
+## Future Options
 
+1. botnet
+2. other protocols
+
+## Attack Target
+
+Samba server.
+
+1. Samba is based on SMB protocol.
+2. SMB is based on NetBIOS API.
+3. NetBIOS based on
+   1. TCP: port 445(main), 137, 139.
+   2. UDP: ports 137, 138.
 
 ## Experiment
 

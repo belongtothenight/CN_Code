@@ -10,6 +10,7 @@ class Config:
 
         self.ATKIPv4 = "192.168.137.203"
         self.ATKPort = 445  # default 80
+        self.ATKBytes = 2450
 
         self.HPING3 = False
         self.Hammer = True
