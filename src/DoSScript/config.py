@@ -8,7 +8,7 @@ class Config:
     def __init__(self):
         self.Platform = "win"
 
-        self.ATKIPv4 = "192.168.137.203"
+        self.ATKIPv4 = "192.168.171.73"
         self.ATKPort = 445  # default 80
         self.ATKBytes = 2450
 
