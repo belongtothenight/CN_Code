@@ -14,6 +14,7 @@ DO NOT USE THESE SCRIPTS FOR MALICIOUS PURPOSES. THESE ARE PREPARED ONLY FOR EDU
 | hulk.py       | <code style="color:Lime">/UDP/</code> Slim version of [HULK](https://github.com/R3DHULK/HULK).                                                                                       |
 | tcp1.py       | <code style="color:Violet">/TCP/</code> Experiment version of [flood.py](https://github.com/Leeon123/TCP-UDP-Flood/blob/master/flood.py).                                            |
 | tcp2.py       | <code style="color:Violet">/TCP/</code> Experiment version of [Make SYN Flooding Attack in Python](https://www.thepythoncode.com/article/syn-flooding-attack-using-scapy-in-python). |
+| slowloris.py  | <code style="color:Lime">/TCP/</code> Slim version of [slowloris.py] (https://github.com/gkbrk/slowloris/blob/master/slowloris.py).
 | integrated.py | Intergrate all of the above scripts into a single file.                                                                                                                              |
 
 ## Future Options
