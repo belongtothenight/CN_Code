@@ -2,6 +2,7 @@
 
 Computer Network.
 
+Note: Previous commits had been trashed for security concerns.
 ## Codes
 
 | No  | Folder                                                                               | Functionality                                                 |
