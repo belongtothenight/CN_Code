@@ -1,0 +1,6 @@
+1. Open VMware.
+2. Select one machine.
+3. Open "Edit virtual machine settings/Options/Shared Folders/Folder sharing", click "Always enabled".
+4. In "Folders", click "Add...", select path to the shared folder, and finished.
+5. In ubuntu machine, open terminal, "cd /mnt/hgfs/<custom shared folder name>" to locate your shared folder.
+

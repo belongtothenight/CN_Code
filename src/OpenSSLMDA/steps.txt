@@ -1,0 +1,10 @@
+///////////////////////////
+SECTION 1
+=========
+Message Digest / Authentication
+///////////////////////////
+
+1. Finish steps in "OpenSSLEx/steps.txt".
+2. Use "openssl sha1 -out digest.txt plain.txt" to generate hashed message.
+3. Use "openssl sha1 -sign privatekey.pem -out rsasign.bin plain.txt" to generate SHA1 based hash and sign it with private key.
+4. Use "openssl sha1 -verify publickey.pem -signature rsasign.bin plain.txt" to verify received file.

@@ -1,0 +1,450 @@
+H/W path           Device      Class          Description
+=========================================================
+                               system         VMware Virtual Platform
+/0                             bus            440BX Desktop Reference Platform
+/0/0                           memory         86KiB BIOS
+/0/1                           processor      Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+/0/1/0                         memory         16KiB L1 cache
+/0/1/1                         memory         16KiB L1 cache
+/0/2                           processor      Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+/0/5                           processor      CPU
+/0/5/95                        memory         16KiB L1 cache
+/0/6                           processor      CPU
+/0/6/96                        memory         16KiB L1 cache
+/0/7                           processor      CPU
+/0/7/97                        memory         16KiB L1 cache
+/0/8                           processor      CPU
+/0/8/98                        memory         16KiB L1 cache
+/0/9                           processor      CPU
+/0/9/99                        memory         16KiB L1 cache
+/0/a                           processor      CPU
+/0/a/9a                        memory         16KiB L1 cache
+/0/b                           processor      CPU
+/0/b/9b                        memory         16KiB L1 cache
+/0/c                           processor      CPU
+/0/c/9c                        memory         16KiB L1 cache
+/0/d                           processor      CPU
+/0/d/9d                        memory         16KiB L1 cache
+/0/e                           processor      CPU
+/0/e/9e                        memory         16KiB L1 cache
+/0/f                           processor      CPU
+/0/f/9f                        memory         16KiB L1 cache
+/0/10                          processor      CPU
+/0/10/a0                       memory         16KiB L1 cache
+/0/11                          processor      CPU
+/0/11/a1                       memory         16KiB L1 cache
+/0/12                          processor      CPU
+/0/12/a2                       memory         16KiB L1 cache
+/0/13                          processor      CPU
+/0/13/a3                       memory         16KiB L1 cache
+/0/14                          processor      CPU
+/0/14/a4                       memory         16KiB L1 cache
+/0/15                          processor      CPU
+/0/15/a5                       memory         16KiB L1 cache
+/0/16                          processor      CPU
+/0/16/a6                       memory         16KiB L1 cache
+/0/17                          processor      CPU
+/0/17/a7                       memory         16KiB L1 cache
+/0/18                          processor      CPU
+/0/18/a8                       memory         16KiB L1 cache
+/0/19                          processor      CPU
+/0/19/a9                       memory         16KiB L1 cache
+/0/1a                          processor      CPU
+/0/1a/aa                       memory         16KiB L1 cache
+/0/1b                          processor      CPU
+/0/1b/ab                       memory         16KiB L1 cache
+/0/1c                          processor      CPU
+/0/1c/ac                       memory         16KiB L1 cache
+/0/1d                          processor      CPU
+/0/1d/ad                       memory         16KiB L1 cache
+/0/1e                          processor      CPU
+/0/1e/ae                       memory         16KiB L1 cache
+/0/1f                          processor      CPU
+/0/1f/af                       memory         16KiB L1 cache
+/0/20                          processor      CPU
+/0/20/b0                       memory         16KiB L1 cache
+/0/21                          processor      CPU
+/0/21/b1                       memory         16KiB L1 cache
+/0/22                          processor      CPU
+/0/22/b2                       memory         16KiB L1 cache
+/0/23                          processor      CPU
+/0/23/b3                       memory         16KiB L1 cache
+/0/24                          processor      CPU
+/0/24/b4                       memory         16KiB L1 cache
+/0/25                          processor      CPU
+/0/25/b5                       memory         16KiB L1 cache
+/0/25/0                        memory         DIMM [empty]
+/0/25/1                        memory         DIMM [empty]
+/0/25/2                        memory         DIMM [empty]
+/0/25/3                        memory         DIMM [empty]
+/0/25/4                        memory         DIMM [empty]
+/0/25/5                        memory         DIMM [empty]
+/0/25/6                        memory         DIMM [empty]
+/0/25/7                        memory         DIMM [empty]
+/0/25/8                        memory         DIMM [empty]
+/0/25/9                        memory         DIMM [empty]
+/0/25/a                        memory         DIMM [empty]
+/0/25/b                        memory         DIMM [empty]
+/0/25/c                        memory         DIMM [empty]
+/0/25/d                        memory         DIMM [empty]
+/0/25/e                        memory         DIMM [empty]
+/0/25/f                        memory         DIMM [empty]
+/0/25/10                       memory         DIMM [empty]
+/0/25/11                       memory         DIMM [empty]
+/0/25/12                       memory         DIMM [empty]
+/0/25/13                       memory         DIMM [empty]
+/0/25/14                       memory         DIMM [empty]
+/0/25/15                       memory         DIMM [empty]
+/0/25/16                       memory         DIMM [empty]
+/0/25/17                       memory         DIMM [empty]
+/0/25/18                       memory         DIMM [empty]
+/0/25/19                       memory         DIMM [empty]
+/0/25/1a                       memory         DIMM [empty]
+/0/25/1b                       memory         DIMM [empty]
+/0/25/1c                       memory         DIMM [empty]
+/0/25/1d                       memory         DIMM [empty]
+/0/25/1e                       memory         DIMM [empty]
+/0/25/1f                       memory         DIMM [empty]
+/0/25/20                       memory         DIMM [empty]
+/0/25/21                       memory         DIMM [empty]
+/0/25/22                       memory         DIMM [empty]
+/0/25/23                       memory         DIMM [empty]
+/0/25/24                       memory         DIMM [empty]
+/0/25/25                       memory         DIMM [empty]
+/0/25/26                       memory         DIMM [empty]
+/0/25/27                       memory         DIMM [empty]
+/0/25/28                       memory         DIMM [empty]
+/0/25/29                       memory         DIMM [empty]
+/0/25/2a                       memory         DIMM [empty]
+/0/25/2b                       memory         DIMM [empty]
+/0/25/2c                       memory         DIMM [empty]
+/0/25/2d                       memory         DIMM [empty]
+/0/25/2e                       memory         DIMM [empty]
+/0/25/2f                       memory         DIMM [empty]
+/0/25/30                       memory         DIMM [empty]
+/0/25/31                       memory         DIMM [empty]
+/0/25/32                       memory         DIMM [empty]
+/0/25/33                       memory         DIMM [empty]
+/0/25/34                       memory         DIMM [empty]
+/0/25/35                       memory         DIMM [empty]
+/0/25/36                       memory         DIMM [empty]
+/0/25/37                       memory         DIMM [empty]
+/0/25/38                       memory         DIMM [empty]
+/0/25/39                       memory         DIMM [empty]
+/0/25/3a                       memory         DIMM [empty]
+/0/25/3b                       memory         DIMM [empty]
+/0/25/3c                       memory         DIMM [empty]
+/0/25/3d                       memory         DIMM [empty]
+/0/25/3e                       memory         DIMM [empty]
+/0/25/3f                       memory         DIMM [empty]
+/0/26                          processor      CPU
+/0/26/b6                       memory         16KiB L1 cache
+/0/27                          processor      CPU
+/0/27/b7                       memory         16KiB L1 cache
+/0/28                          processor      CPU
+/0/28/b8                       memory         16KiB L1 cache
+/0/29                          processor      CPU
+/0/29/b9                       memory         16KiB L1 cache
+/0/2a                          processor      CPU
+/0/2a/ba                       memory         16KiB L1 cache
+/0/2b                          processor      CPU
+/0/2b/bb                       memory         16KiB L1 cache
+/0/2c                          processor      CPU
+/0/2c/bc                       memory         16KiB L1 cache
+/0/2d                          processor      CPU
+/0/2d/bd                       memory         16KiB L1 cache
+/0/2e                          processor      CPU
+/0/2e/be                       memory         16KiB L1 cache
+/0/2f                          processor      CPU
+/0/2f/bf                       memory         16KiB L1 cache
+/0/30                          processor      CPU
+/0/30/c0                       memory         16KiB L1 cache
+/0/31                          processor      CPU
+/0/31/c1                       memory         16KiB L1 cache
+/0/32                          processor      CPU
+/0/32/c2                       memory         16KiB L1 cache
+/0/33                          processor      CPU
+/0/33/c3                       memory         16KiB L1 cache
+/0/34                          processor      CPU
+/0/34/c4                       memory         16KiB L1 cache
+/0/35                          processor      CPU
+/0/35/c5                       memory         16KiB L1 cache
+/0/36                          processor      CPU
+/0/36/c6                       memory         16KiB L1 cache
+/0/37                          processor      CPU
+/0/37/c7                       memory         16KiB L1 cache
+/0/38                          processor      CPU
+/0/38/c8                       memory         16KiB L1 cache
+/0/39                          processor      CPU
+/0/39/c9                       memory         16KiB L1 cache
+/0/3a                          processor      CPU
+/0/3a/ca                       memory         16KiB L1 cache
+/0/3b                          processor      CPU
+/0/3b/cb                       memory         16KiB L1 cache
+/0/3c                          processor      CPU
+/0/3c/cc                       memory         16KiB L1 cache
+/0/3d                          processor      CPU
+/0/3d/cd                       memory         16KiB L1 cache
+/0/3e                          processor      CPU
+/0/3e/ce                       memory         16KiB L1 cache
+/0/3f                          processor      CPU
+/0/3f/cf                       memory         16KiB L1 cache
+/0/40                          processor      CPU
+/0/40/d0                       memory         16KiB L1 cache
+/0/41                          processor      CPU
+/0/41/d1                       memory         16KiB L1 cache
+/0/42                          processor      CPU
+/0/42/d2                       memory         16KiB L1 cache
+/0/43                          processor      CPU
+/0/43/d3                       memory         16KiB L1 cache
+/0/44                          processor      CPU
+/0/44/d4                       memory         16KiB L1 cache
+/0/45                          processor      CPU
+/0/45/d5                       memory         16KiB L1 cache
+/0/46                          processor      CPU
+/0/46/d6                       memory         16KiB L1 cache
+/0/47                          processor      CPU
+/0/47/d7                       memory         16KiB L1 cache
+/0/48                          processor      CPU
+/0/48/d8                       memory         16KiB L1 cache
+/0/49                          processor      CPU
+/0/49/d9                       memory         16KiB L1 cache
+/0/4a                          processor      CPU
+/0/4a/da                       memory         16KiB L1 cache
+/0/4b                          processor      CPU
+/0/4b/db                       memory         16KiB L1 cache
+/0/4c                          processor      CPU
+/0/4c/dc                       memory         16KiB L1 cache
+/0/4d                          processor      CPU
+/0/4d/dd                       memory         16KiB L1 cache
+/0/4e                          processor      CPU
+/0/4e/de                       memory         16KiB L1 cache
+/0/4f                          processor      CPU
+/0/4f/df                       memory         16KiB L1 cache
+/0/50                          processor      CPU
+/0/50/e0                       memory         16KiB L1 cache
+/0/51                          processor      CPU
+/0/51/e1                       memory         16KiB L1 cache
+/0/52                          processor      CPU
+/0/52/e2                       memory         16KiB L1 cache
+/0/53                          processor      CPU
+/0/53/e3                       memory         16KiB L1 cache
+/0/54                          processor      CPU
+/0/54/e4                       memory         16KiB L1 cache
+/0/55                          processor      CPU
+/0/55/e5                       memory         16KiB L1 cache
+/0/56                          processor      CPU
+/0/56/e6                       memory         16KiB L1 cache
+/0/57                          processor      CPU
+/0/57/e7                       memory         16KiB L1 cache
+/0/58                          processor      CPU
+/0/58/e8                       memory         16KiB L1 cache
+/0/59                          processor      CPU
+/0/59/e9                       memory         16KiB L1 cache
+/0/5a                          processor      CPU
+/0/5a/ea                       memory         16KiB L1 cache
+/0/5b                          processor      CPU
+/0/5b/eb                       memory         16KiB L1 cache
+/0/5c                          processor      CPU
+/0/5c/ec                       memory         16KiB L1 cache
+/0/5d                          processor      CPU
+/0/5d/ed                       memory         16KiB L1 cache
+/0/5e                          processor      CPU
+/0/5e/ee                       memory         16KiB L1 cache
+/0/5f                          processor      CPU
+/0/5f/ef                       memory         16KiB L1 cache
+/0/60                          processor      CPU
+/0/60/f0                       memory         16KiB L1 cache
+/0/61                          processor      CPU
+/0/61/f1                       memory         16KiB L1 cache
+/0/62                          processor      CPU
+/0/62/f2                       memory         16KiB L1 cache
+/0/63                          processor      CPU
+/0/63/f3                       memory         16KiB L1 cache
+/0/64                          processor      CPU
+/0/64/f4                       memory         16KiB L1 cache
+/0/65                          processor      CPU
+/0/65/f5                       memory         16KiB L1 cache
+/0/66                          processor      CPU
+/0/66/f6                       memory         16KiB L1 cache
+/0/67                          processor      CPU
+/0/67/f7                       memory         16KiB L1 cache
+/0/68                          processor      CPU
+/0/68/f8                       memory         16KiB L1 cache
+/0/69                          processor      CPU
+/0/69/f9                       memory         16KiB L1 cache
+/0/6a                          processor      CPU
+/0/6a/fa                       memory         16KiB L1 cache
+/0/6b                          processor      CPU
+/0/6b/fb                       memory         16KiB L1 cache
+/0/6c                          processor      CPU
+/0/6c/fc                       memory         16KiB L1 cache
+/0/6d                          processor      CPU
+/0/6d/fd                       memory         16KiB L1 cache
+/0/6e                          processor      CPU
+/0/6e/fe                       memory         16KiB L1 cache
+/0/6f                          processor      CPU
+/0/6f/ff                       memory         16KiB L1 cache
+/0/70                          processor      CPU
+/0/70/100                      memory         16KiB L1 cache
+/0/71                          processor      CPU
+/0/71/101                      memory         16KiB L1 cache
+/0/72                          processor      CPU
+/0/72/102                      memory         16KiB L1 cache
+/0/73                          processor      CPU
+/0/73/103                      memory         16KiB L1 cache
+/0/74                          processor      CPU
+/0/74/104                      memory         16KiB L1 cache
+/0/75                          processor      CPU
+/0/75/105                      memory         16KiB L1 cache
+/0/76                          processor      CPU
+/0/76/106                      memory         16KiB L1 cache
+/0/77                          processor      CPU
+/0/77/107                      memory         16KiB L1 cache
+/0/78                          processor      CPU
+/0/78/108                      memory         16KiB L1 cache
+/0/79                          processor      CPU
+/0/79/109                      memory         16KiB L1 cache
+/0/7a                          processor      CPU
+/0/7a/10a                      memory         16KiB L1 cache
+/0/7b                          processor      CPU
+/0/7b/10b                      memory         16KiB L1 cache
+/0/7c                          processor      CPU
+/0/7c/10c                      memory         16KiB L1 cache
+/0/7d                          processor      CPU
+/0/7d/10d                      memory         16KiB L1 cache
+/0/7e                          processor      CPU
+/0/7e/10e                      memory         16KiB L1 cache
+/0/7f                          processor      CPU
+/0/7f/10f                      memory         16KiB L1 cache
+/0/80                          processor      CPU
+/0/80/110                      memory         16KiB L1 cache
+/0/81                          processor      CPU
+/0/81/111                      memory         16KiB L1 cache
+/0/82                          processor      CPU
+/0/82/112                      memory         16KiB L1 cache
+/0/1a2                         memory         16GiB System Memory
+/0/1a2/0                       memory         16GiB DIMM DRAM EDO
+/0/1a2/1                       memory         DIMM DRAM [empty]
+/0/1a2/2                       memory         DIMM DRAM [empty]
+/0/1a2/3                       memory         DIMM DRAM [empty]
+/0/1a2/4                       memory         DIMM DRAM [empty]
+/0/1a2/5                       memory         DIMM DRAM [empty]
+/0/1a2/6                       memory         DIMM DRAM [empty]
+/0/1a2/7                       memory         DIMM DRAM [empty]
+/0/1a2/8                       memory         DIMM DRAM [empty]
+/0/1a2/9                       memory         DIMM DRAM [empty]
+/0/1a2/a                       memory         DIMM DRAM [empty]
+/0/1a2/b                       memory         DIMM DRAM [empty]
+/0/1a2/c                       memory         DIMM DRAM [empty]
+/0/1a2/d                       memory         DIMM DRAM [empty]
+/0/1a2/e                       memory         DIMM DRAM [empty]
+/0/1a2/f                       memory         DIMM DRAM [empty]
+/0/1a2/10                      memory         DIMM DRAM [empty]
+/0/1a2/11                      memory         DIMM DRAM [empty]
+/0/1a2/12                      memory         DIMM DRAM [empty]
+/0/1a2/13                      memory         DIMM DRAM [empty]
+/0/1a2/14                      memory         DIMM DRAM [empty]
+/0/1a2/15                      memory         DIMM DRAM [empty]
+/0/1a2/16                      memory         DIMM DRAM [empty]
+/0/1a2/17                      memory         DIMM DRAM [empty]
+/0/1a2/18                      memory         DIMM DRAM [empty]
+/0/1a2/19                      memory         DIMM DRAM [empty]
+/0/1a2/1a                      memory         DIMM DRAM [empty]
+/0/1a2/1b                      memory         DIMM DRAM [empty]
+/0/1a2/1c                      memory         DIMM DRAM [empty]
+/0/1a2/1d                      memory         DIMM DRAM [empty]
+/0/1a2/1e                      memory         DIMM DRAM [empty]
+/0/1a2/1f                      memory         DIMM DRAM [empty]
+/0/1a2/20                      memory         DIMM DRAM [empty]
+/0/1a2/21                      memory         DIMM DRAM [empty]
+/0/1a2/22                      memory         DIMM DRAM [empty]
+/0/1a2/23                      memory         DIMM DRAM [empty]
+/0/1a2/24                      memory         DIMM DRAM [empty]
+/0/1a2/25                      memory         DIMM DRAM [empty]
+/0/1a2/26                      memory         DIMM DRAM [empty]
+/0/1a2/27                      memory         DIMM DRAM [empty]
+/0/1a2/28                      memory         DIMM DRAM [empty]
+/0/1a2/29                      memory         DIMM DRAM [empty]
+/0/1a2/2a                      memory         DIMM DRAM [empty]
+/0/1a2/2b                      memory         DIMM DRAM [empty]
+/0/1a2/2c                      memory         DIMM DRAM [empty]
+/0/1a2/2d                      memory         DIMM DRAM [empty]
+/0/1a2/2e                      memory         DIMM DRAM [empty]
+/0/1a2/2f                      memory         DIMM DRAM [empty]
+/0/1a2/30                      memory         DIMM DRAM [empty]
+/0/1a2/31                      memory         DIMM DRAM [empty]
+/0/1a2/32                      memory         DIMM DRAM [empty]
+/0/1a2/33                      memory         DIMM DRAM [empty]
+/0/1a2/34                      memory         DIMM DRAM [empty]
+/0/1a2/35                      memory         DIMM DRAM [empty]
+/0/1a2/36                      memory         DIMM DRAM [empty]
+/0/1a2/37                      memory         DIMM DRAM [empty]
+/0/1a2/38                      memory         DIMM DRAM [empty]
+/0/1a2/39                      memory         DIMM DRAM [empty]
+/0/1a2/3a                      memory         DIMM DRAM [empty]
+/0/1a2/3b                      memory         DIMM DRAM [empty]
+/0/1a2/3c                      memory         DIMM DRAM [empty]
+/0/1a2/3d                      memory         DIMM DRAM [empty]
+/0/1a2/3e                      memory         DIMM DRAM [empty]
+/0/1a2/3f                      memory         DIMM DRAM [empty]
+/0/100                         bridge         440BX/ZX/DX - 82443BX/ZX/DX Host bridge
+/0/100/1                       bridge         440BX/ZX/DX - 82443BX/ZX/DX AGP bridge
+/0/100/7                       bridge         82371AB/EB/MB PIIX4 ISA
+/0/100/7.1                     storage        82371AB/EB/MB PIIX4 IDE
+/0/100/7.3                     bridge         82371AB/EB/MB PIIX4 ACPI
+/0/100/7.7                     generic        Virtual Machine Communication Interface
+/0/100/f                       display        SVGA II Adapter
+/0/100/10          scsi2       storage        53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI
+/0/100/10/0.0.0    /dev/sda    disk           107GB VMware Virtual S
+/0/100/10/0.0.0/1  /dev/sda1   volume         1023KiB BIOS Boot partition
+/0/100/10/0.0.0/2  /dev/sda2   volume         99GiB EXT4 volume
+/0/100/11                      bridge         PCI bridge
+/0/100/11/0                    bus            USB1.1 UHCI Controller
+/0/100/11/0/1      usb2        bus            UHCI Host Controller
+/0/100/11/0/1/1                input          VMware Virtual USB Mouse
+/0/100/11/0/1/2                bus            VMware Virtual USB Hub
+/0/100/11/0/1/2/1              communication  Virtual Bluetooth Adapter
+/0/100/11/1        ens33       network        82545EM Gigabit Ethernet Controller (Copper)
+/0/100/11/2                    multimedia     ES1371/ES1373 / Creative Labs CT2518
+/0/100/11/3                    bus            USB2 EHCI Controller
+/0/100/11/3/1      usb1        bus            EHCI Host Controller
+/0/100/11/4                    storage        SATA AHCI controller
+/0/100/15                      bridge         PCI Express Root Port
+/0/100/15.1                    bridge         PCI Express Root Port
+/0/100/15.2                    bridge         PCI Express Root Port
+/0/100/15.3                    bridge         PCI Express Root Port
+/0/100/15.4                    bridge         PCI Express Root Port
+/0/100/15.5                    bridge         PCI Express Root Port
+/0/100/15.6                    bridge         PCI Express Root Port
+/0/100/15.7                    bridge         PCI Express Root Port
+/0/100/16                      bridge         PCI Express Root Port
+/0/100/16.1                    bridge         PCI Express Root Port
+/0/100/16.2                    bridge         PCI Express Root Port
+/0/100/16.3                    bridge         PCI Express Root Port
+/0/100/16.4                    bridge         PCI Express Root Port
+/0/100/16.5                    bridge         PCI Express Root Port
+/0/100/16.6                    bridge         PCI Express Root Port
+/0/100/16.7                    bridge         PCI Express Root Port
+/0/100/17                      bridge         PCI Express Root Port
+/0/100/17.1                    bridge         PCI Express Root Port
+/0/100/17.2                    bridge         PCI Express Root Port
+/0/100/17.3                    bridge         PCI Express Root Port
+/0/100/17.4                    bridge         PCI Express Root Port
+/0/100/17.5                    bridge         PCI Express Root Port
+/0/100/17.6                    bridge         PCI Express Root Port
+/0/100/17.7                    bridge         PCI Express Root Port
+/0/100/18                      bridge         PCI Express Root Port
+/0/100/18.1                    bridge         PCI Express Root Port
+/0/100/18.2                    bridge         PCI Express Root Port
+/0/100/18.3                    bridge         PCI Express Root Port
+/0/100/18.4                    bridge         PCI Express Root Port
+/0/100/18.5                    bridge         PCI Express Root Port
+/0/100/18.6                    bridge         PCI Express Root Port
+/0/100/18.7                    bridge         PCI Express Root Port
+/0/3               scsi3       storage        
+/0/3/0.0.0         /dev/cdrom  disk           VMware SATA CD00
+/0/3/0.0.0/0       /dev/cdrom  disk           
+/0/4               scsi4       storage        
+/0/4/0.0.0         /dev/dvd    disk           VMware SATA CD01
+/1                             system         
