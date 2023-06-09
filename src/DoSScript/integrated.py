@@ -19,16 +19,16 @@ class Config:
     def __init__(self):
         self.Platform = "win"
 
-        self.ATKIPv4 = "192.168.1.206"
-        self.ATKPort = 445  # default 80
+        self.ATKIPv4 = "192.168.1.244"
+        self.ATKPort = 80  # default 80
         self.ATKBytes = 2450
 
         self.HPING3 = False
-        self.Hammer = False
-        self.HULK = False
+        self.Hammer = True
+        self.HULK = True
         self.SlowLoris = True
 
-        self.waitTime = 5  # seconds
+        self.waitTime = 0  # seconds
         self.printColor = False
 
         self.HPING3_PARAMETERS = [
